@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "5d5905bed3a2413aeacd8911b2d517aa"
+name = "checkoutpincode"
+handle = "checkoutpincode"
+application_url = "https://fallen-learners-hook-questions.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,write_orders,read_orders,write_shipping,read_shipping,write_customers,read_customers,write_order_submission_rules,read_order_submission_rules,read_all_orders"
+
+[auth]
+redirect_urls = [
+  "https://fallen-learners-hook-questions.trycloudflare.com/auth/callback",
+  "https://fallen-learners-hook-questions.trycloudflare.com/auth/shopify/callback",
+  "https://fallen-learners-hook-questions.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
