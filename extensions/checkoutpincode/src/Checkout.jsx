@@ -7,7 +7,7 @@ import {
   useApi,
   useApplyAttributeChange,
   useInstructions,
-  useTranslate
+  useTranslate,
 } from "@shopify/ui-extensions-react/checkout";
 
 // 1. Choose an extension target
@@ -18,11 +18,8 @@ export default reactExtension("purchase.checkout.delivery-address.render-before"
 function Extension() {
   const translate = useTranslate();
   const { extension } = useApi();
-  const apidata = useApi();
   const instructions = useInstructions();
   const applyAttributeChange = useApplyAttributeChange();
-  console.log("apidata");
-  console.log(apidata);
 
 
   // 2. Check instructions for feature availability, see https://shopify.dev/docs/api/checkout-ui-extensions/apis/cart-instructions for details
